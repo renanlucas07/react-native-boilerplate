@@ -1,26 +1,29 @@
 import { USER_LOGGED_IN, USER_LOGGED_OUT } from "../actions/actionTypes";
 
-const initialState = { 
+const initialState = {
   name: null,
-  email: null
+  email: null,
+  signed_id: false
 }
 
 const userReducer = (state = initialState, action) => {
-  switch (action.type) { 
+  switch (action.type) {
     case USER_LOGGED_IN:
       let user = action.payload
-      return { 
+      return {
         ...state,
         name: user.name,
-        email: user.email
+        email: user.email,
+        signed_id: true
       }
-    case USER_LOGGED_OUT: 
+    case USER_LOGGED_OUT:
       return {
         ...state,
         name: null,
-        email: null
+        email: null,
+        signed_id: true
       }
-    default: 
+    default:
       return state
   }
 }

@@ -2,19 +2,19 @@ import React from 'react'
 import { ListItem } from 'react-native-elements'
 import { ScrollView, Text } from 'react-native'
 
-const List = ({ wathers }) => (
+const List = ({ items }) => (
   <ScrollView>
     {
-      wathers.map((wather, i) => (
+      items.map((item, i) => (
         <ListItem
           key={i}
-          title={wather.name}
+          title={item.name}
           subtitle={
             <Text numberOfLines={1}>
-              R$ {wather.pricing} - {wather.description}
+              R$ {item.pricing} - {item.description}
             </Text>
           }
-          badge={{ value: wather.stock }}
+          badge={{ value: item.stock }}
         />
       ))
     }

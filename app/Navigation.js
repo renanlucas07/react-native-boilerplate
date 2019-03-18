@@ -7,12 +7,10 @@ import {
 import LoginScreen from './screens/LoginScreen'
 import RegisterScreen from './screens/RegisterScreen'
 import HomeScreen from "./screens/HomeScreen";
-import NewWatherScreen from "./screens/NewWatherScreen";
 
 // Screens when user is logged
 const AppStack = createStackNavigator({
-  Home: HomeScreen,
-  NewWather: NewWatherScreen
+  Home: HomeScreen
 });
 
 // Screens when user is not logged

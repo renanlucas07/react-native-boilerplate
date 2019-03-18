@@ -13,9 +13,9 @@ import { login } from '../store/actions/user'
 class Login extends Component {
 
   state = {
-    name: 'Allef Gomes',
-    email: 'allef@rubert.com.br',
-    password: '12341234',
+    name: '',
+    email: '',
+    password: '',
     loading: false
   }
 
@@ -24,11 +24,10 @@ class Login extends Component {
     const response = {
       ok: true,
       data: {
-        token: 'creu'
+        token: 'token'
       }
     }
     if (response.ok) {
-      console.log('oii')
       let { token } = response.data;
       try {
         await AsyncStorage.setItem('token', token);
@@ -53,7 +52,7 @@ class Login extends Component {
         <Input
           placeholder="Email"
           autoCapitalize="none"
-          autoFocus keyboardType='email-address'
+          keyboardType='email-address'
           value={this.state.email}
           onChangeText={email => this.setState({ email })}
           inputStyle={styles.input}

@@ -1,4 +1,4 @@
-package com.onilearning;
+package com.app_name;
 
 import android.app.Application;
 

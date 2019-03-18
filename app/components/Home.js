@@ -3,22 +3,26 @@ import List from './List';
 import { connect } from 'react-redux';
 
 class Home extends Component {
-  state = {
-    wathers: []
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      items: []
+    }
   }
 
   componentDidMount() {
-    this._handleGetWathers();
+    this._handleGetItems();
   }
 
-  _handleGetWathers = async () => {
-    const data = [{id: 1, name: `agua`, pricing: `12`, description: `agua da boa`}];
-    this.setState({ wathers: data });
+  _handleGetItems = async () => {
+    const data = [{id: 1, name: `agua`, pricing: `12`, description: `agua`}];
+    this.setState({ items: data });
   }
 
   render() {
     return (
-      <List wathers={this.state.wathers} />
+      <List items={this.state.items} />
     )
   }
 }
