@@ -3,7 +3,6 @@ import { USER_LOGGED_IN, USER_LOGGED_OUT } from "../actions/actionTypes";
 const initialState = {
   name: null,
   email: null,
-  signed_id: false
 }
 
 const userReducer = (state = initialState, action) => {
@@ -13,15 +12,13 @@ const userReducer = (state = initialState, action) => {
       return {
         ...state,
         name: user.name,
-        email: user.email,
-        signed_id: true
+        email: user.email
       }
     case USER_LOGGED_OUT:
       return {
         ...state,
         name: null,
-        email: null,
-        signed_id: true
+        email: null
       }
     default:
       return state

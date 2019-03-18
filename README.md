@@ -1,7 +1,5 @@
 # react-native-boilerplate
 
-[TOC]
-
 #### Features
 
 - Navigation - react-navigation (with switchNavigator);
@@ -38,35 +36,6 @@
     ├── index.js
     ├── package.json
     └── README.md
-
-
-app_name/
-  __tests__/
-  android/
-  ios/
-  app/
-  	assets/
-  		fonts/
-  			...
-  		images/
-		components/
-			...
-		screens/
-			HomeScreen.js
-			SignInScreen.js
-			SignUpScreen.js
-		store/
-			actions/
-				actionTypes.js
-				user.js
-			reducers/
-				user.js
-			storeConfig.js
-		Navigation.js
-	app.json
-	index.js
-	package.json
-
 
 #### Instructions
 
