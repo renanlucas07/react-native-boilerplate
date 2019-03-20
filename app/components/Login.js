@@ -1,14 +1,15 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import {
   AsyncStorage,
   StyleSheet,
   ToastAndroid,
   View
-} from 'react-native'
+} from 'react-native';
 import { withNavigation } from 'react-navigation';
-import { Input, Button } from 'react-native-elements'
-import { connect } from 'react-redux'
-import { login } from '../store/actions/user'
+import { Input, Button } from 'react-native-elements';
+import { connect } from 'react-redux';
+import { login } from '../store/actions/user';
+import { loginStyle } from '../assets/styles';
 
 class Login extends Component {
 
@@ -48,61 +49,41 @@ class Login extends Component {
 
   render() {
     return (
-      <View style={styles.container}>
+      <View style={loginStyle.container}>
         <Input
           placeholder="Email"
           autoCapitalize="none"
           keyboardType='email-address'
           value={this.state.email}
           onChangeText={email => this.setState({ email })}
-          inputStyle={styles.input}
-          containerStyle={styles.inputContainer}
+          inputStyle={loginStyle.input}
+          containerStyle={loginStyle.inputContainer}
         />
         <Input
           placeholder="Senha"
           secureTextEntry value={this.state.password}
           onChangeText={password => this.setState({ password })}
-          inputStyle={styles.input}
-          containerStyle={styles.inputContainer}
+          inputStyle={loginStyle.input}
+          containerStyle={loginStyle.inputContainer}
         />
         <Button
-          title="Logar" containerStyle={styles.button}
+          title="Logar" containerStyle={loginStyle.button}
           onPress={this._login}
           disabled={this.state.loading}
           loading={this.state.loading}
         />
 
         <Button
-          title="Registrar" containerStyle={styles.button}
+          title="Registrar" containerStyle={loginStyle.button}
           onPress={() => { this.props.navigation.navigate('Register') }}
           disabled={this.state.loading}
           type="clear"
         />
-
       </View>
     )
   }
 }
 
-const styles = StyleSheet.create({
-  button: {
-    paddingHorizontal: 10
-  },
-  container: {
-    flex: 1,
-    backgroundColor: '#78c8ed',
-    flexDirection: 'column',
-    justifyContent: 'center',
-  },
-  input: {
-    backgroundColor: '#fff',
-    borderRadius: 6,
-    paddingLeft: 15,
-  },
-  inputContainer: {
-    paddingBottom: 10,
-  }
-})
 
 const mapDispatchToProps = dispatch => {
   return {
